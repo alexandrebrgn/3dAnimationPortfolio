@@ -35,11 +35,25 @@ const controls = new OrbitControls(camera, renderer.domElement);
 function animate() {
   requestAnimationFrame(animate);
   torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
+  torus.rotation.y += 0.0005;
   torus.rotation.z += 0.01; 
 
   controls.update();
   renderer.render(scene, camera);
 }
 
+function addStar() {
+  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+  const material = new THREE.MeshStandardMaterial({color: 0xffffff});
+  const star = new THREE.Mesh(geometry, material);
+
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(500));
+  star.position.set(x, y, z);
+  scene.add(star)
+}
+
+// const spaceTexture = new THREE.TextureLoader().load('stars-bg.jpg');
+// scene.background = spaceTexture;
+
+Array(2000).fill().forEach(addStar)
 animate()

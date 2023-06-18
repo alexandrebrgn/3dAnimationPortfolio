@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy" : "gh-pages -d dist"
+    "deploy" : "gh-pages -d dist",
+    "auto-push" : "git add . && git commit -m ''"
   },
   "devDependencies": {
     "vite": "^4.3.9"

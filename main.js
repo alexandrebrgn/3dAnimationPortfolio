@@ -52,7 +52,7 @@ function animate() { // Function to animate torus
 function loadGLTF() { // Function to load gltf file of car
   const carMesh = new GLTFLoader();
 
-  carMesh.load('/model/f50/scene.gltf', (gltf) => {
+  carMesh.load('scene.gltf', (gltf) => {
     gltf.scene.scale.set(10, 10, 10);
     scene.add(gltf.scene);
     carMesh.position.x = 10;

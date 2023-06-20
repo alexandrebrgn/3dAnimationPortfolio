@@ -40,22 +40,22 @@ scene.add(lightHelper, gridHelper);
 const directionalLight = new THREE.DirectionalLight(0xffffff,2, 2);
 directionalLight.position.set(0,1,0);
 directionalLight.castShadow = false;
-//scene.add(directionalLight);
+scene.add(directionalLight);
 
 const light = new THREE.PointLight(0xc4c4c4, 5);
 const lighthelp = new THREE.PointLightHelper(light);
 light.position.set(0, 300, 500);
-//scene.add(light, lighthelp);
+scene.add(light, lighthelp);
 
 const light2 = new THREE.PointLight(0xc4c4c4, 5);
 const lighthelp2 = new THREE.PointLightHelper(light2);
 light.position.set(500, 100, 0);
-//scene.add(light2, lighthelp2);
+scene.add(light2, lighthelp2);
 
 const light3 = new THREE.PointLight(0xc4c4c4, 5);
 const lighthelp3 = new THREE.PointLightHelper(light3);
 light.position.set(0, 100, -500);
-//scene.add(light3, lighthelp3);
+scene.add(light3, lighthelp3);
 
 const light4 = new THREE.PointLight(0xc4c4c4, 5);
 const lighthelp4 = new THREE.PointLightHelper(light4);
@@ -79,7 +79,7 @@ function animate() { // Function to animate torus
 function loadGLTF() { // Function to load gltf file of car
   const carMesh = new GLTFLoader();
 
-  carMesh.load('scene.gltf', (gltf) => {
+  carMesh.load('/scene.gltf', (gltf) => {
     gltf.scene.scale.set(10, 10, 10);
     scene.add(gltf.scene);
     carMesh.position.x = 10;

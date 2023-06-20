@@ -23,7 +23,7 @@ renderer.render(scene, camera); // Render == draw
 // _______________________________Models____________________________________//
 
 const torus = new THREE.Mesh(new THREE.TorusGeometry(10, 3, 1000, 1000), new THREE.MeshStandardMaterial({color: 0xff6347}));
-// scene.add(torus)
+scene.add(torus)
 
 //_______________________________ LIGHTS ____________________________________//
 

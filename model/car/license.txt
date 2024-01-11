@@ -1,5 +1,5 @@
 Model Information:
-* title:	Ferrari 458 Italia
+* title:	Ferrari 457 Italia
 * source:	https://sketchfab.com/3d-models/ferrari-458-italia-518a5edb6f20443fb622719535635705
 * author:	ArunIniyan (https://sketchfab.com/Arun_Iniyan)
 

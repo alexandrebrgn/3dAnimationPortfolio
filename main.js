@@ -34,8 +34,8 @@ const ambientLight = new THREE.AmbientLightProbe(0xffffff, 10);
 scene.add(pointLight, ambientLight);
 
 const lightHelper = new THREE.PointLightHelper(pointLight);
-// const gridHelper =new THREE.GridHelper(200, 50)
-scene.add(lightHelper);
+const gridHelper =new THREE.GridHelper(200, 50)
+scene.add(lightHelper, gridHelper);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff,2, 2);
 directionalLight.position.set(0,1,0);
@@ -79,7 +79,7 @@ function animate() { // Function to animate torus
 function loadGLTF() { // Function to load gltf file of car
   const carMesh = new GLTFLoader();
 
-  carMesh.load('scene.gltf', (gltf) => {
+  carMesh.load('model/lambo/scene.gltf', (gltf) => {
     gltf.scene.scale.set(10, 10, 10);
     scene.add(gltf.scene);
     carMesh.position.x = 10;
@@ -100,8 +100,8 @@ function addStar() { // Function to add stars
   scene.add(star)
 }
 
-// const spaceTexture = new THREE.TextureLoader().load('stars-bg.jpg');
-// scene.background = spaceTexture;
+const spaceTexture = new THREE.TextureLoader().load('stars-bg.jpg');
+//scene.background = spaceTexture;
 
 Array(200).fill().forEach(addStar)
 animate()

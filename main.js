@@ -103,6 +103,7 @@ function addStar() { // Function to add stars
 const spaceTexture = new THREE.TextureLoader().load('stars-bg.jpg');
 //scene.background = spaceTexture;
 
+console.log('maj du /public')
 Array(200).fill().forEach(addStar)
 animate()
 loadGLTF()

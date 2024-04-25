@@ -9,13 +9,15 @@ Projet THREE.js pour tester la technologie. Le projet est de faire un garage en 
 ## Installation
 
 1. Clonez le dépôt.
-2. Installez les dépendances en exécutant ```sh
+2. Installez les dépendances en exécutant 
+```sh
 npm install
 ```
 
 ## Utilisation
 
-1. Démarrez l'application en exécutant ```sh 
+1. Démarrez l'application en exécutant 
+```sh 
 npm run dev -- --host
 ```
 

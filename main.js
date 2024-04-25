@@ -79,7 +79,7 @@ function animate() { // Function to animate torus
 function loadGLTF() { // Function to load gltf file of car
   const carMesh = new GLTFLoader();
 
-  carMesh.load('/model/lambo/scene.gltf', (gltf) => {
+  carMesh.load('./model/lambo/scene.gltf', (gltf) => {
     gltf.scene.scale.set(10, 10, 10);
     scene.add(gltf.scene);
     carMesh.position.x = 10;
@@ -100,8 +100,8 @@ function addStar() { // Function to add stars
   scene.add(star)
 }
 
-const spaceTexture = new THREE.TextureLoader().load('stars-bg.jpg');
-//scene.background = spaceTexture;
+// const spaceTexture = new THREE.TextureLoader().load('stars-bg.jpg');
+// scene.background = spaceTexture;
 
 console.log('maj du /public')
 Array(200).fill().forEach(addStar)

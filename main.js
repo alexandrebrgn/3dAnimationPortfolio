@@ -77,14 +77,11 @@ function animate() { // Function to animate torus
 }
 
 function loadGLTF() { // Function to load gltf file of car
-  const carMesh = new GLTFLoader();
+  const carModel = new GLTFLoader();
 
-  carMesh.load('./model/lambo/scene.gltf', (gltf) => {
+  carModel.load('.model/lambo/scene.gltf', (gltf) => {
     gltf.scene.scale.set(10, 10, 10);
     scene.add(gltf.scene);
-    carMesh.position.x = 10;
-    carMesh.position.y = 10;
-    carMesh.position.z = 10;
     renderer.render(scene, camera);
   })
 }

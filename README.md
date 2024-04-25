@@ -4,16 +4,20 @@ Projet THREE.js pour tester la technologie. Le projet est de faire un garage en 
 
 ## Aperçu
 
-<img src="/assets/website-screenshot.png" width="500">
+![Aperçu du projet](/assets/website-screenshot.png)
 
 ## Installation
 
 1. Clonez le dépôt.
-2. Installez les dépendances en exécutant ```sh npm install```
+2. Installez les dépendances en exécutant ```sh
+npm install
+```
 
 ## Utilisation
 
-1. Démarrez l'application en exécutant ```sh npm run dev -- --host```
+1. Démarrez l'application en exécutant ```sh 
+npm run dev -- --host
+```
 
 2. Accédez à l'URL locale indiquée dans la console pour voir votre application.
 

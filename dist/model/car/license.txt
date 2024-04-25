@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ferrari 457 Italia
+* source:	https://sketchfab.com/3d-models/ferrari-458-italia-518a5edb6f20443fb622719535635705
+* author:	ArunIniyan (https://sketchfab.com/Arun_Iniyan)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ferrari 458 Italia" (https://sketchfab.com/3d-models/ferrari-458-italia-518a5edb6f20443fb622719535635705) by ArunIniyan (https://sketchfab.com/Arun_Iniyan) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

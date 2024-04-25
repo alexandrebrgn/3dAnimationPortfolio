@@ -4,7 +4,7 @@ Projet THREE.js pour tester la technologie. Le projet est de faire un garage en 
 
 ## Aperçu
 
-![Aperçu du projet](/assets/website-screenshot.png)
+![Aperçu du projet](/public/assets/website-screenshot.png)
 
 ## Installation
 

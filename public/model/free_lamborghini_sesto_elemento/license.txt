@@ -1,0 +1,11 @@
+Model Information:
+* title:	Free Lamborghini Sesto Elemento
+* source:	https://sketchfab.com/3d-models/free-lamborghini-sesto-elemento-d96a03102e744dccae648c381a734d1c
+* author:	Desiccated_Lemon (https://sketchfab.com/Desiccated_Lemon)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Free Lamborghini Sesto Elemento" (https://sketchfab.com/3d-models/free-lamborghini-sesto-elemento-d96a03102e744dccae648c381a734d1c) by Desiccated_Lemon (https://sketchfab.com/Desiccated_Lemon) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

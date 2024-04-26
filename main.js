@@ -2,18 +2,20 @@ import './style.css'
 import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js';
 import { OrbitControls } from '/node_modules/three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { RectAreaLightUniformsLib } from 'three/examples/jsm/lights/RectAreaLightUniformsLib.js';
+import { RectAreaLightHelper } from 'three/addons/helpers/RectAreaLightHelper.js';
+import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
 });
 renderer.setPixelRatio(window.devicePixelRatio); // Pixel de l'instanciation = pixels de l'ecran
 renderer.setSize(window.innerWidth, window.innerHeight); // Mettre en full-screen
-camera.position.x = 50;
-camera.position.y = 25;
-camera.position.z = 60;
-camera.rotation.y = 45/180*Math.PI;
+camera.position.x = -150;
+camera.position.y = 20;
+camera.position.z = 80;
 renderer.render(scene, camera); // Render == draw
 
 // const geometry = new THREE.PlaneGeometry( 1, 1 );
@@ -27,40 +29,58 @@ const torus = new THREE.Mesh(new THREE.TorusGeometry(10, 3, 1000, 1000), new THR
 
 //_______________________________ LIGHTS ____________________________________//
 
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(15, 15, 15);
+const ambientLight = new THREE.AmbientLightProbe(0xffffff, .5);
+scene.add(ambientLight);
 
-const ambientLight = new THREE.AmbientLightProbe(0xffffff, 10);
-scene.add(pointLight, ambientLight);
-
-const lightHelper = new THREE.PointLightHelper(pointLight);
+// const lightHelper = new THREE.PointLightHelper(pointLight);
 const gridHelper =new THREE.GridHelper(200, 50)
-scene.add(lightHelper, gridHelper);
+scene.add(gridHelper);
+// scene.add(lightHelper);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff,2, 2);
-directionalLight.position.set(0,1,0);
-directionalLight.castShadow = false;
-scene.add(directionalLight);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+directionalLight.position.set(1, 10, 5);
+directionalLight.target.position.set(0, 0, 0);
 
-const light = new THREE.PointLight(0xc4c4c4, 5);
-const lighthelp = new THREE.PointLightHelper(light);
-light.position.set(0, 300, 500);
-scene.add(light, lighthelp);
+// scene.add(directionalLight);
+// scene.add(directionalLight.target);
 
-const light2 = new THREE.PointLight(0xc4c4c4, 5);
-const lighthelp2 = new THREE.PointLightHelper(light2);
-light.position.set(500, 100, 0);
-scene.add(light2, lighthelp2);
+const width = 8;
+const height = 25;
 
-const light3 = new THREE.PointLight(0xc4c4c4, 5);
-const lighthelp3 = new THREE.PointLightHelper(light3);
-light.position.set(0, 100, -500);
-scene.add(light3, lighthelp3);
+const bigLight = new THREE.RectAreaLight(0xFFFFFF, 200, 10, 200);
+const huracanLight = new THREE.RectAreaLight(0xFFFFFF, 20, width, height);
+const huracanEvoLight = new THREE.RectAreaLight(0xFFFFFF, 20, width, height);
+const f40Light = new THREE.RectAreaLight(0xFFFFFF, 20, width, height);
+const lightHelper = new RectAreaLightHelper(huracanLight);
+const lightHelper2 = new RectAreaLightHelper(huracanEvoLight);
+const lightHelper3 = new RectAreaLightHelper(f40Light);
+const lightHelper4 = new RectAreaLightHelper(bigLight);
 
-const light4 = new THREE.PointLight(0xc4c4c4, 5);
-const lighthelp4 = new THREE.PointLightHelper(light4);
-light.position.set(-500, 300, 0);
-scene.add(light4, lighthelp4);
+bigLight.position.set(0, 20, 20);
+bigLight.rotateZ(1.55);
+bigLight.rotateY(0.75);
+bigLight.lookAt(0, 0, 0);
+bigLight.add(lightHelper4);
+
+lightHelper.rotateOnAxis(1.5)
+huracanLight.position.set(-30, 50, 0);
+huracanLight.lookAt(-30, 0, 0);
+huracanLight.add(lightHelper);
+
+lightHelper2.rotateOnAxis(1.5)
+huracanEvoLight.position.set(-60, 50, 0);
+huracanEvoLight.lookAt(-60, 0, 0);
+huracanEvoLight.add(lightHelper2);
+
+lightHelper3.rotateOnAxis(1.5)
+f40Light.position.set(60, 20, 0);
+f40Light.lookAt(60, 0, 0);
+f40Light.add(lightHelper3);
+
+scene.add(huracanLight)
+scene.add(huracanEvoLight)
+scene.add(f40Light)
+// scene.add(bigLight)
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -77,10 +97,43 @@ function animate() { // Function to animate torus
 }
 
 function loadGLTF() { // Function to load gltf file of car
-  const carModel = new GLTFLoader();
+  const aventador = new GLTFLoader();
+  const sestoElemento = new GLTFLoader();
+  const huracan = new GLTFLoader();
+  const huracanevo2 = new GLTFLoader();
+  const f40 = new GLTFLoader();
 
-  carModel.load('./model/lambo/scene.gltf', (gltf) => {
+  aventador.load('./model/lambo/scene.gltf', (gltf) => {
     gltf.scene.scale.set(10, 10, 10);
+    scene.add(gltf.scene);
+    renderer.render(scene, camera);
+  })
+
+  sestoElemento.load('./model/free_lamborghini_sesto_elemento/scene.gltf', (gltf) => {
+    gltf.scene.scale.set(21, 21, 21);
+    gltf.scene.position.set(30, 0, 0);
+    gltf.scene.rotateY(1.55)
+    scene.add(gltf.scene);
+    renderer.render(scene, camera);
+  })
+
+  huracanevo2.load('./model/huracantrofeoevo2/scene.gltf', (gltf) => {
+    gltf.scene.scale.set(10, 10, 10);
+    gltf.scene.position.set(-60, 0, 0);
+    scene.add(gltf.scene);
+    renderer.render(scene, camera);
+  })
+
+  huracan.load('./model/huracan/scene.gltf', (gltf) => {
+    gltf.scene.scale.set(7, 7, 7);
+    gltf.scene.position.set(-30, 0, 0);
+    scene.add(gltf.scene);
+    renderer.render(scene, camera);
+  })
+
+  f40.load('./model/f40/scene.gltf', (gltf) => {
+    gltf.scene.scale.set(10, 10, 10);
+    gltf.scene.position.set(60, 0, 0);
     scene.add(gltf.scene);
     renderer.render(scene, camera);
   })
@@ -100,6 +153,7 @@ function addStar() { // Function to add stars
 // const spaceTexture = new THREE.TextureLoader().load('stars-bg.jpg');
 // scene.background = spaceTexture;
 
+renderer.physicallyCorrectLights = true;
 console.log('maj du /public')
 Array(200).fill().forEach(addStar)
 animate()

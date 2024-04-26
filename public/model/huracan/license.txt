@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lamborghini Huracan GT3 EVO
+* source:	https://sketchfab.com/3d-models/lamborghini-huracan-gt3-evo-6d03247f40e3498fb0742d62db723b7c
+* author:	kevin (ケビン) (https://sketchfab.com/sohyalebret)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lamborghini Huracan GT3 EVO" (https://sketchfab.com/3d-models/lamborghini-huracan-gt3-evo-6d03247f40e3498fb0742d62db723b7c) by kevin (ケビン) (https://sketchfab.com/sohyalebret) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
